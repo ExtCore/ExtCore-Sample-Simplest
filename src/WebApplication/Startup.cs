@@ -15,9 +15,9 @@ namespace WebApplication
   {
     private string extensionsPath;
 
-    public Startup(IHostingEnvironment hostingEnvironment, IConfiguration configuration)
+    public Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment)
     {
-      this.extensionsPath = hostingEnvironment.ContentRootPath + configuration["Extensions:Path"];
+      this.extensionsPath = webHostEnvironment.ContentRootPath + configuration["Extensions:Path"];
     }
 
     public void ConfigureServices(IServiceCollection services)
